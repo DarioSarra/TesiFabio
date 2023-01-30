@@ -3,6 +3,7 @@ include("main.jl")
 path = "/Users/dariosarra/Documents/House/TesiFabio/Entergalactic.mp4"
 movie = VideoIO.openvideo(path)
 c_avg = RGB{Float64}[]
+for img in movie
     map(x->convert(RGB{Float64}, x),img)
     push!(c_avg,sum(img)/length(img))
 end
